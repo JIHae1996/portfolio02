@@ -1,0 +1,118 @@
+.animated-section.visible{
+    .portfolio_title{animation: slide-in-Up 1s ease-out both;
+        &::after{
+            width: 50%;
+        }
+    }
+    .work_content{animation: slide-in-Up 1s 0.5s ease-out both;}
+    @keyframes slide-in-Up {
+        0%{transform: translateY(30px); opacity:0; }
+        100%{transform: translateY(0); opacity:1; }
+    }
+}
+.portfolio_container{
+    position: relative;
+    margin-bottom: 200px;
+    width: 100%; height: auto;
+    .portfolio_title{
+        margin: 40px 0;
+        font-size: 4vw;
+        font-style: italic;
+        text-align: center;
+        color: #8c8c8c;
+        &::after{
+            display: block;
+            content: '';
+            margin: 0 auto;
+            width: 0;
+            height: 1px;
+            transition: all 2s linear;
+            background-color: #ddd;
+        }
+    }
+    .work_content{ 
+        display: flex;
+        margin-bottom: 200px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        text-align: center;
+        .card {
+            position: relative;
+            padding: 80px 0;
+            width: 16%;
+            height: auto;
+            background: var(--linear_black, linear-gradient(180deg, #6f6f6f 0%, rgba(23, 23, 23, 0.00) 100%));
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2);
+            &::before {
+              display: block;
+              position: absolute;
+              content: '';
+              top: 0;
+              width: 100%;
+              height: 100%;
+              font-size: 2vw; color: #eee;
+            }
+            &:nth-of-type(1)::before{
+            background: #fff url('https://mblogthumb-phinf.pstatic.net/MjAxNjExMjFfMjAx/MDAxNDc5NzAwMjU5MDMz.6OVxoMJc4UYzLYbiPtofHCnhCIHTQ0NMu2MatdYwQlgg.K2YLi0VkvOOoZVpFa61O6vsPh8Oja818xQIzXFptjOgg.PNG.ppanppane/%ED%95%AB%ED%8A%B8%EB%9E%99%EC%8A%A4_%EB%A1%9C%EA%B3%A0_%282%29.png?type=w800') 50% 50% no-repeat;
+            background-size: contain;}
+            &:nth-of-type(2)::before{
+            background:  #ffffff url('https://www.all-con.co.kr/data/poster_thumb/thumb_1920x0-495416.jpg?v=1681195504') 50% 50% no-repeat;
+            background-size: contain;
+            }
+            &:nth-of-type(3)::before{ 
+                background: #fff url('https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9788928348466.jpg') 50% 50% no-repeat;
+                background-size: contain;}
+            &:nth-of-type(4)::before{ 
+                background: #fff url('https://qi-o.qoo10cdn.com/goods_image_big/9/9/8/5/10810759985c_l.jpg') 50% 50% no-repeat;
+                background-size: contain;}
+            &:hover::before {
+              animation: fade-out 0.5s ease forwards;
+              display: none;
+            }
+            @keyframes fade-out {
+                0%{ opacity: 1;}
+                100%{ opacity: 0;}
+            }
+            .content{
+                .title{
+                    margin-bottom: 20px;
+                    font-size: 2vw; 
+                    color: #ddd;
+                }
+                .copy{
+                    margin: 0 20px 20px;
+                    font-size: 1vw;
+                    line-height: 1.5;
+                    text-align: left;
+                    em{
+                        font-size: 0.8vw;
+                    }
+                }
+                .btn{
+                    padding: 10px 20px;
+                    background-color: #000;
+                    border:none; 
+                    box-shadow:none; 
+                    border-radius:0; 
+                    color: #eee;
+                    cursor:pointer
+                }
+            }
+        }
+    }  
+    .work_content.other_content{
+        .card{
+            width: 33%;
+            &:nth-of-type(1)::before{
+                background: #fff url('https://cdn-bastani.stunning.kr/prod/portfolios/8154e16b-1a89-43a6-8f07-4ac3e16022f4/contents/23d96024263640738f3e02e41be31b9ebaeae94ab58d33fd49a901f38988d4b7_v1.jpg') 50% 50% no-repeat;
+                background-size: cover;}
+                &:nth-of-type(2)::before{
+                background:  #ffffff url('https://cdn-bastani.stunning.kr/prod/portfolios/8154e16b-1a89-43a6-8f07-4ac3e16022f4/contents/v9rDtSw2dFXC7xbe.Comp-5.gif') 0 no-repeat;
+                background-size: cover;
+            }
+            .copy{text-align: center;}
+        }
+    }
+}
